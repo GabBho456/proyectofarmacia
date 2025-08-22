@@ -1,0 +1,539 @@
+
+/* Imagen de fondo que cubre TODO el body */
+body::before {
+    content: "";
+    position: fixed; /* fijo para que no se mueva con scroll */
+    top: 0;
+    left: 0;
+    width: 100vw; /* ancho completo de la ventana */
+    height: 100vh; /* alto completo de la ventana */
+    background: url('https://www.lanuevacronica.com/uploads/s1/81/26/59/hospital-archivo-29418_4_1000x563.jpeg') no-repeat center center/cover; /* imagen centrada y ajustada */
+    filter: blur(4px); /* efecto borroso */
+    z-index: -1; /* detrás de todo el contenido */
+    pointer-events: none; /* para que no interfiera con clics */
+}
+
+/* Estilo del encabezado */
+header {
+  display: flex;
+  justify-content: space-between; /* espacio entre elementos */
+  align-items: center; /* centrado vertical */
+  padding: 10px 20px;
+  background: #ff0000bb; /* color rojo con transparencia */
+  border-bottom: 1px solid #ccc; /* borde inferior */
+}
+
+/* Logo del sitio */
+.logo {
+  font-weight: bold;
+  color: #ffffff; /* color blanco */
+  font-size: 24px;
+}
+
+/* Contenedor del buscador */
+.buscador {
+  position: relative;
+  flex: 1;
+  max-width: 500px; /* ancho máximo */
+  margin: 0 20px;
+}
+
+/* Estilo del input del buscador */
+.buscador input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 20px; /* esquinas redondeadas */
+  border: 1px solid #ffffff;
+}
+
+/* Contenedor de resultados del buscador */
+.resultados {
+  position: absolute;
+  top: 100%; /* debajo del input */
+  left: 0;
+  right: 0;
+  background: white;
+  border: 1px solid #ccc;
+  z-index: 10; /* encima de otros elementos */
+  display: none; /* oculto por defecto */
+}
+
+/* Cada elemento de resultado */
+.resultado-item {
+  display: flex;
+  padding: 10px;
+  cursor: pointer;
+}
+
+/* Hover sobre los resultados */
+.resultado-item:hover {
+  background: #f0f0f0;
+}
+
+/* Imagen dentro de los resultados */
+.resultado-item img {
+  width: 40px;
+  margin-right: 10px;
+}
+
+/* Acciones (iconos o botones) */
+.acciones span {
+  margin-left: 15px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/* Breadcrumbs */
+.breadcrumb {
+  padding: 10px 20px;
+  font-size: 14px;
+  background: #ffffff;
+}
+
+/* Contenedor de producto */
+.producto-contenedor {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.401); /* fondo semitransparente */
+}
+
+/* Galería de imágenes del producto */
+.galeria {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Miniaturas */
+.galeria .mini {
+  width: 60px;
+  height: 80px;
+  border: 1px solid #ccc;
+}
+
+/* Imagen principal del producto */
+.producto-imagen img {
+  width: 300px;
+}
+
+/* Información del producto */
+.producto-info {
+  background: #ffffff7a; /* fondo semi-transparente */
+  padding: 20px;
+  border-radius: 10px;
+  flex: 1; /* ocupa el espacio restante */
+}
+
+/* Título del producto */
+.producto-info h1 {
+  font-size: 20px;
+}
+
+/* Referencia y precio antiguo */
+.referencia,
+.precio-antiguo {
+  text-decoration: line-through;
+  color: #888;
+}
+
+/* Precio actual */
+.precio {
+  font-size: 24px;
+  color: green;
+}
+
+/* Contenedor de cantidad */
+.cantidad {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+/* Botones de cantidad */
+.cantidad button {
+  padding: 5px 10px;
+}
+
+/* Botón comprar */
+.comprar {
+  background: #2ecc40; /* verde */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  width: 300px;
+}
+
+/* Input de ubicación */
+.ubicacion input {
+  padding: 5px;
+  width: 200px;
+}
+
+/* Estilo del footer */
+footer {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  gap: 10px;
+  background: white;
+  padding: 10px;
+}
+
+/* Botones del footer */
+footer button {
+  padding: 10px;
+  border: none;
+  border-radius: 10px 10px 0 0;
+  background: #eee;
+  cursor: pointer;
+}
+
+/* Botón activo en footer */
+footer .activo {
+  background: #ff3333;
+  color: white;
+}
+
+/* Buscador con mayor ancho */
+.buscador {
+  position: relative;
+  max-width: 700px;
+  flex: 1;
+}
+
+/* Input del buscador (estilo extendido) */
+.buscador input {
+  width: 100%;
+  padding: 10px;
+  padding-right: 30px; /* espacio para el botón cerrar */
+  border-radius: 20px;
+  border: 2px solid #a00; /* borde rojo */
+  box-sizing: border-box;
+}
+
+/* Botón cerrar búsqueda */
+#cerrarBusqueda {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 20px;
+  color: #a00;
+}
+
+/* Contenedor de resultados extendido */
+.resultados {
+  position: absolute;
+  top: 105%;
+  left: 0;
+  right: 0;
+  background: white;
+  border: 1px solid #ccc;
+  z-index: 10;
+  display: none;
+  border-radius: 10px;
+  overflow: hidden;
+  max-height: 300px;
+  overflow-y: auto; /* scroll vertical si hay muchos resultados */
+}
+
+/* Elemento de resultado */
+.resultado-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  cursor: pointer;
+  border-bottom: 1px solid #eee;
+}
+
+/* Imagen de resultado */
+.resultado-item img {
+  width: 40px;
+  margin-right: 10px;
+}
+
+/* Hover sobre resultado */
+.resultado-item:hover {
+  background: #f0f0f0;
+}
+
+/* Contenedor de cantidad con estilo */
+.cantidad-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: Arial, sans-serif;
+      margin-bottom: 10px;
+}
+
+/* Botones de cantidad */
+.cantidad-container button {
+      padding: 5px 10px;
+      font-size: 18px;
+      cursor: pointer;
+      border: 1px solid #ccc;
+      background-color: #f0f0f0;
+      border-radius: 4px;
+}
+
+/* Input de cantidad */
+.cantidad-container input {
+      width: 60px;
+      text-align: center;
+      font-size: 16px;
+      padding: 5px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+}
+
+   /* Total a pagar en el carrito */
+.total {
+      font-size: 18px;
+      font-weight: bold; /* texto destacado */
+}
+
+/* Contenedor de la galería principal */
+.gallery {
+  display: flex;
+  gap: 10px; /* espacio entre imágenes */
+  align-items: center;
+}
+
+/* Contenedor de miniaturas (thumbnails) */
+.thumbnails {
+  display: flex;
+  flex-direction: column; /* columna vertical */
+  gap: 10px;
+}
+
+/* Miniaturas individuales */
+.thumbnails img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover; /* ajustar imagen sin deformar */
+  cursor: pointer;
+  border: 2px solid transparent; /* borde invisible por defecto */
+  transition: border-color 0.3s; /* animación al cambiar borde */
+}
+
+/* Miniatura activa */
+.thumbnails img.active {
+  border-color: #007bff; /* borde azul cuando está seleccionada */
+}
+
+/* Contenedor de imagen principal */
+.main-image-container {
+  position: relative;
+  overflow: hidden; /* recorta contenido que sobrepase */
+  width: 400px;
+  height: 400px;
+  cursor: zoom-in; /* indica que se puede ampliar */
+  border: 1px solid #ccc;
+}
+
+/* Imagen principal */
+.main-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease; /* suaviza escalado al hacer zoom */
+}
+
+/* Contenedor centrado */
+.container {
+    text-align: center;
+}
+
+/* Títulos */
+h1 {
+    margin-bottom: 30px;
+    font-size: 2rem;
+}
+
+/* Botón moderno con degradado */
+.btn {
+    background: linear-gradient(45deg, #ff6a00, #ee0979);
+    border: none;
+    padding: 15px 40px;
+    margin: 10px;
+    font-size: 18px;
+    color: white;
+    border-radius: 50px; /* forma redondeada */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative; /* para pseudo-elementos */
+    overflow: hidden; /* recorta animaciones internas */
+}
+
+/* Efecto hover del botón */
+.btn:hover {
+    transform: scale(1.05); /* agranda ligeramente */
+    box-shadow: 0 0 20px rgba(255,255,255,0.6);
+}
+
+/* Efecto al hacer clic */
+.btn:active {
+    transform: scale(0.95);
+}
+
+/* Animación de onda dentro del botón */
+.btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%; /* empieza fuera a la izquierda */
+    width: 300%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: skewX(-45deg); /* ángulo de efecto */
+    transition: left 0.5s;
+}
+
+/* Animación al pasar el mouse */
+.btn:hover::before {
+    left: 100%; /* recorre todo el botón */
+}
+
+/* Contenedor de pestañas */
+.tabs {
+  display: flex;
+  gap: 10px;
+}
+
+/* Pestaña individual */
+.tab {
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  background-color: #eee;
+  transition: background 0.3s;
+}
+
+/* Pestaña activa */
+.tab.active {
+  background-color: red;
+  color: white;
+}
+
+/* Hover sobre pestaña */
+.tab:hover {
+  background-color: #ddd;
+}
+
+/* Contenido de las pestañas */
+.tab-content {
+  margin-top: 20px;
+  background: rgba(255, 0, 0, 0.621); /* fondo semitransparente */
+  padding: 20px;
+  border-radius: 10px;
+  min-height: 200px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Panel individual (oculto por defecto) */
+.tab-panel {
+  display: none;
+}
+
+/* Panel activo (visible) */
+.tab-panel.active {
+  display: block;
+}
+
+/* Bloque flotante tipo promo */
+.promo-box {
+  position: fixed; /* fijo en pantalla */
+  right: 20px;
+  bottom: 20px;
+  width: 500px;
+  height: 300px;
+  background: #ffffffcc; /* semitransparente */
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  overflow: hidden;
+  z-index: 9999; /* encima de todo */
+}
+
+/* Imagen dentro del bloque promocional */
+.promo-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Botón cerrar promo */
+.promo-close {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 24px;
+  height: 24px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.5);
+  color: white;
+  font-size: 18px;
+  line-height: 20px;
+  cursor: pointer;
+  z-index: 1;
+  transition: background 0.3s ease;
+}
+
+/* Hover sobre botón cerrar */
+.promo-close:hover {
+  background: rgba(0,0,0,0.8);
+}
+
+/* Efecto hover sobre el cuadro promocional */
+.promo-box:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+
+/* Botón de compra principal */
+.btn-comprar {
+  background: linear-gradient(90deg, #28a745, #218838);
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 15px 40px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+}
+
+/* Hover sobre botón comprar */
+.btn-comprar:hover {
+  background: linear-gradient(90deg, #218838, #1e7e34);
+  transform: scale(1.05);
+  box-shadow: 0px 6px 14px rgba(0,0,0,0.3);
+}
+
+/* Animación para aparecer desde abajo con fade */
+@keyframes slideFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(50px); /* empieza más abajo */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* termina en posición normal */
+  }
+}
+
+/* Aplicar animación a main y contenido principal */
+body > main,
+body > .tabs,
+body > .tab-content {
+  opacity: 0; /* iniciar invisible */
+  animation: slideFadeIn 1s ease-out forwards;
+  animation-delay: 0.2s; /* retraso suave para que header se vea primero */
+}

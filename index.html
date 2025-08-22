@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Buscador y Servicios</title>
+  <link rel="stylesheet" href="style.css">
+    <!-- Favicon -->
+<link rel="icon" type="image/png" href="MG/cruzzz.webp">
+</head>
+<body class="registro-page">
+  <header>
+    </div>
+    <div class="nav-main">
+      <div class="logo">FarmaTech <img src="MG/cruzzz.webp" alt="Descripción de la imagen" width="60" height="50"></div> 
+      <nav class="menu">
+        
+        <a href="metodpago.html">Metodo de pago</a>
+        <a href="creditos.html">Creditos © 2025 FarmaTech.</a>
+        
+      </nav>
+      <div class="acciones-header">
+        <a href="farm.html" class="btn-voluntario">Comparador de precios y disponibilidad. </a>
+        <a href="farmacia.html" class="btn-socio">ubicación de farmacias.</a>
+     
+      
+      </div>
+     
+<!-- Botón flotante -->
+<div class="boton-busqueda-flotante" id="abrirBusqueda">
+  🔍
+</div>
+
+<!-- Cuadro de búsqueda -->
+<div class="cuadro-busqueda" id="cuadroBusqueda">
+  <input
+    type="text"
+    id="searchInput"
+    placeholder="Buscar medicamento..."
+    onkeyup="filtrarResultados()" />
+  <span id="cerrarBusqueda">&times;</span>
+</div>
+
+<!-- Resultados -->
+<div id="resultadoLista"></div>
+</div>
+
+<!-- Ionicons -->
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+  </header>
+
+  <section class="slider">
+    <div class="slides">
+      <div class="slide active">
+        <img src="MG/doc.png" alt="Campaña calor">
+        <div class="slide-text">
+          <h2>Importancia de la vacunación en adultos</h2>
+          <p>No solo los niños deben vacunarse. Adultos también deben recibir refuerzos o vacunas específicas (como influenza, tétanos o hepatitis), y muchas farmacias hoy ofrecen este servicio.</p>
+          <a href="https://www.cdc.gov/spanish/" class="btn-principal">Descubre cómo</a>
+        </div>
+      </div>
+      
+      <div class="slide">
+        <img src="MG/hos.jpg" alt="Imagen 2">
+        <div class="slide-text">
+          <h2>Uso responsable de los antibióticos</h2>
+          <p>El mal uso de antibióticos puede provocar resistencia bacteriana, lo que significa que los medicamentos pierden efectividad. Es importante concientizar sobre no automedicarse y completar los tratamientos indicados.</p>
+          <a href="https://www.cdc.gov/spanish/" class="btn-principal">Descubre cómo</a>
+        </div>
+      </div>
+      <div class="slide">
+        <img src="MG/med.png" alt="Imagen 3">
+        <div class="slide-text">
+          <h2>Medicamentos genéricos vs. de marca</h2>
+          <p>Los medicamentos genéricos tienen el mismo principio activo que los de marca, pero son más accesibles económicamente. Muchas personas aún desconocen su eficacia o dudan de ellos.</p>
+          <a href="https://www.gob.mx/cofepris/articulos/los-medicamentos-genericos-son-eficaces" class="btn-principal">Descubre cómo</a>
+        </div>
+      </div>
+    </div>
+    <div class="pagination">
+      <span class="dot active" data-slide="0"></span>
+      <span class="dot" data-slide="1"></span>
+      <span class="dot" data-slide="2"></span>
+    </div>
+  </section>
+
+  <main>
+    <section class="acciones">
+      <h2>Avances Semanales<br>Bitacora.</h2>
+      <a href="quien.html" class="btn-secundario">Clik🧠</a>
+      
+    </section>
+  </main>
+  <div class="top-bar">
+      
+  <div class="chat-flotante">
+    <div class="chat-header">+ ¿Necesitas ayuda?.<span class="cerrar">✕</span></div>
+    <div class="chat-body">
+      Contacta a nuestro soporte, EuniBot.
+    </div>
+    <div class="chat-footer">
+      <a href="sesion\iniciar.html" class="btn-chat">Abrir chat</a>
+      <img src="https://th.bing.com/th/id/R.bab8ea88f472cd2f478ebcfce81310e5?rik=8xTjFWNFmclHuA&riu=http%3a%2f%2f1.bp.blogspot.com%2f-oNcMscd99FU%2fU-Pddhcf0sI%2fAAAAAAACWwg%2feCRcZw9MhXE%2fs1600%2fMEDICINA%2b(31).gif&ehk=tH7uDyMrCuUaa%2bbZY3EF6toXrGoBVyuxu%2b6%2bDpm2cas%3d&risl=&pid=ImgRaw&r=0" alt="GIF de ejemplo">
+    </div>
+  </div>
+<script src="script.js"></script>
+</body>
+</html>

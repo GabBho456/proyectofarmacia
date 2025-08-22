@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Formulario de Pagos — Demo</title>
+  <link rel="stylesheet" href="css5/style.css">
+ <!-- Favicon -->
+<link rel="icon" type="image/png" href="../MG/cruzzz.webp">
+  <style>
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh; /* ahora sí se expande con el contenido */
+  position: relative;
+}
+body::before {
+  content: "";
+  position: fixed; /* 👈 que quede fijo en toda la pantalla */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("https://tse1.mm.bing.net/th/id/OIP.RoV1WRrwIdTEzoUsNTnGYAHaE8?rs=1&pid=ImgDetMain&o=7&rm=3") no-repeat center center/cover;
+  filter: blur(6px);
+  z-index: -1; /* detrás del contenido */
+}
+
+
+    .section{display:none}
+    .section.active{display:block}
+    .type-btn{cursor:pointer}
+    .type-btn.active{box-shadow:0 0 0 2px rgba(0,0,0,.06) inset}
+    .muted{opacity:.7;font-size:.95rem}
+    .btn-pagar{display:inline-block;padding:.8rem 1.2rem;border-radius:.6rem;background:#0d6efd;color:#fff;text-decoration:none;border:none}
+    .btn-pagar:disabled{opacity:.6;cursor:not-allowed}
+    .error{color:#ff0000}
+    .success{color:#16a34a}
+    input[disabled], select[disabled]{background:#f3f4f6}
+    .row{display:flex;gap:16px;flex-wrap:wrap}
+    .half{flex:1 1 280px}
+    .full{flex:1 1 100%}
+    .card{background:#ffffff8d;border-radius:12px;padding:16px;border:1px solid #e5e7eb}
+    .container{max-width:1100px;margin:24px auto;padding:0 16px}
+
+    /* Estilos del mensaje flotante */
+    .alerta {
+      position: fixed;
+      top: -80px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #16a34a;
+      color: #fff;
+      padding: 14px 20px;
+      border-radius: 8px;
+      font-weight: bold;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      transition: top 0.5s ease;
+      z-index: 9999;
+    }
+    .alerta.error { background: #dc2626; }
+    .alerta.mostrar { top: 20px; }
+
+
+  button {
+  background: #de0909;   /* verde */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #990b0b;   /* verde más oscuro al pasar el mouse */
+}
+
+/* ANIMACIÓN DE ENTRADA - ZOOM DESDE EL CENTRO */
+@keyframes zoomFadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Aplicar animación al contenido principal */
+.container, .card, .section {
+  opacity: 0;
+  animation: zoomFadeIn 0.7s ease forwards;
+}
+
+/* Animación escalonada */
+.container { animation-delay: 0.1s; }
+.card { animation-delay: 0.25s; }
+.section { animation-delay: 0.4s; }
+  </style>
+</head>
+<body>
+  <!-- Contenedor del mensaje -->
+  <div id="alerta" class="alerta"></div>
+
+  <div class="container">
+    <div class="card">
+      <h1>Formulario de pago</h1>
+      <p class="lead">Elige un tipo de pago y completa los campos correspondientes.</p>
+
+      <form id="pagoForm" novalidate>
+        <!-- Producto -->
+        <div class="row" style="align-items:center;margin-bottom:16px;">
+          <div class="half">
+            <label>Producto</label>
+            <div style="font-size:16px;font-weight:500;">Paracetamol</div>
+            <input type="hidden" name="producto" value="Paracetamol">
+          </div>
+          <div class="half" style="text-align:right;">
+            <img src="https://tse1.mm.bing.net/th/id/OIP.JOyNz7Icr0a2PkYOUpGeKQHaE8?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Producto" style="border-radius:8px;max-width:140px;" />
+          </div>
+        </div>
+
+<!-- Comentario/valoración (visual) --> <div class="card" style="background:#f8fafc;"> <div class="row"> <div class="full"> <div class="row" style="align-items:flex-start"> <div class="half"> <strong>@Jose19521</strong> <p class="muted">Muy buen producto, me ayudó con el problema de cabeza de mi hijo.</p> <p><strong>Presentación:</strong> Caja con 10 tabletas de 500 mg.</p> <p>⭐⭐⭐⭐☆ <span class="muted">(4.5/5) - 851 opiniones</span> — ✅ <span>En stock</span></p> <button onclick="window.location.href='../comentario.html'"> Agregar Comentario?🗣️🙏 </button> </div> </div> </div> </div> </div>
+
+
+        <!-- Tipo de pago -->
+        <label style="margin-top:16px;display:block">Tipo de pago</label>
+        <div class="payment-types" id="paymentButtons" style="display:flex;gap:8px;margin-bottom:16px;">
+          <button type="button" class="type-btn active" data-type="card">Tarjeta</button>
+          <button type="button" class="type-btn" data-type="paypal">PayPal</button>
+          <button type="button" class="type-btn" data-type="bank">Transferencia bancaria</button>
+          <button type="button" class="type-btn" data-type="crypto">Cripto</button>
+        </div>
+
+        <!-- Campo común: monto -->
+        <div class="row card" style="margin-bottom:16px;">
+          <div class="half">
+            <label for="amount">Monto a pagar (HNL)  L 110.00 </label>
+            
+          </div>
+        </div>
+
+        <!-- Tarjeta -->
+        <div id="card" class="section active card">
+          <div class="row">
+            <div class="half">
+              <label for="ccname">Nombre en la tarjeta</label>
+              <input id="ccname" name="ccname" placeholder="Nombre como aparece" />
+            </div>
+            <div class="half">
+              <label for="ccnumber">Número de tarjeta</label>
+              <input id="ccnumber" name="ccnumber" maxlength="19" placeholder="1234 5678 9012 3456" />
+            </div>
+            <div class="half">
+              <label for="ccexp">Expiración (MM/AA)</label>
+              <input id="ccexp" name="ccexp" maxlength="5" placeholder="08/27" />
+            </div>
+            <div class="half">
+              <label for="cccvv">CVV</label>
+              <input id="cccvv" name="cccvv" maxlength="4" placeholder="123" />
+            </div>
+          </div>
+        </div>
+
+        <!-- PayPal -->
+        <div id="paypal" class="section card">
+          <div class="row">
+            <div class="full">
+              <label for="ppemail">Correo PayPal</label>
+              <input id="ppemail" name="ppemail" type="email" placeholder="usuario@ejemplo.com" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Transferencia -->
+        <div id="bank" class="section card">
+          <div class="row">
+            <div class="half">
+              <label for="bankname">Titular de la cuenta</label>
+              <input id="bankname" name="bankname" placeholder="Nombre completo" />
+            </div>
+            <div class="half">
+              <label for="bankiban">IBAN / CLABE / Nº de cuenta</label>
+              <input id="bankiban" name="bankiban" placeholder="0000 0000 0000" />
+            </div>
+            <div class="full">
+              <label for="bankref">Referencia / Concepto</label>
+              <input id="bankref" name="bankref" placeholder="Pago factura #123" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Cripto -->
+        <div id="crypto" class="section card">
+          <div class="row">
+            <div class="half">
+              <label for="coin">Moneda</label>
+              <select id="coin" name="coin">
+                <option value="BTC">Bitcoin (BTC)</option>
+                <option value="ETH">Ethereum (ETH)</option>
+                <option value="USDT">Tether (USDT)</option>
+              </select>
+            </div>
+            <div class="half">
+              <label for="wallet">Dirección de wallet</label>
+              <input id="wallet" name="wallet" placeholder="1FfmbHfnpaZjKFvyi1okTjJJusN455paPH" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Botón -->
+        <div class="row" style="margin-top:16px">
+          <div class="half">
+            <button type="submit" class="btn-pagar" id="submitBtn">💳 Pagar ahora</button>
+            <button onclick="window.location.href='../med/paracetamol.html'">⬅️ Regresar</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+<script>
+const qs  = s => document.querySelector(s);
+const qsa = s => document.querySelectorAll(s);
+const paymentButtons = qs('#paymentButtons');
+const typeBtns  = qsa('.type-btn');
+const sections  = qsa('.section');
+const metodoInp = document.createElement("input");
+metodoInp.type = "hidden";
+metodoInp.name = "metodo_pago";
+qs("#pagoForm").appendChild(metodoInp);
+let current = 'card';
+
+function setActive(type){
+  current = type;
+  metodoInp.value = type;
+  typeBtns.forEach(b=> b.classList.toggle('active', b.dataset.type===type));
+  sections.forEach(s=>{
+    const active = s.id === type;
+    s.classList.toggle('active', active);
+    s.querySelectorAll('input, select, textarea').forEach(el=>{
+      el.disabled = !active;
+    });
+  });
+}
+paymentButtons.addEventListener('click', e=>{
+  const btn = e.target.closest('.type-btn');
+  if(!btn) return;
+  setActive(btn.dataset.type);
+});
+setActive('card');
+
+function mostrarAlerta(texto, esExito) {
+  const alerta = document.getElementById('alerta');
+  alerta.textContent = texto;
+  alerta.classList.toggle('error', !esExito);
+  alerta.classList.add('mostrar');
+  setTimeout(() => { alerta.classList.remove('mostrar'); }, 3000);
+}
+
+const form = qs('#pagoForm');
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const formData = new FormData(form);
+
+  fetch('../guardar_pago.php', {
+    method: 'POST',
+    body: formData
+  })
+  .then(res => res.text())
+  .then(text => {
+    console.log("Respuesta cruda:", text);
+    try {
+      const data = JSON.parse(text);
+      mostrarAlerta(data.mensaje, data.exito);
+      if (data.exito) form.reset();
+    } catch (err) {
+      mostrarAlerta("Respuesta inválida del servidor", false);
+    }
+  })
+  .catch(err => {
+    mostrarAlerta("Error: " + err.message, false);
+  });
+});
+</script>
+</body>
+</html>

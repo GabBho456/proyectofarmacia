@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <!-- Favicon -->
+<link rel="icon" type="image/png" href="MG/cruzzz.webp">
+  <title>Farmacias en Honduras</title>
+
+  <!-- CSS de Leaflet -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+  
+  <!-- Tu CSS -->
+  <link rel="stylesheet" href="map/style.css"/>
+</head>
+<body>
+  <h1>Farmacias en Honduras</h1>
+  <button id="mostrarMapaBtn">Horarios y ubicación de farmacias</button>  <a href="index.html" class="btn-regresar">⬅ Regresar al menú</a>
+  <div id="mapa"></div>
+
+  <!-- JS de Leaflet -->
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+  <script>
+    const boton = document.getElementById("mostrarMapaBtn");
+    const mapaDiv = document.getElementById("mapa");
+    let mapaMostrado = false;
+
+    boton.addEventListener("click", function () {
+      if (!mapaMostrado) {
+        mapaDiv.style.display = "block";
+        const mapa = L.map("mapa").setView([14.5, -86.5], 7); // Vista general de Honduras
+
+        L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+          attribution: "© OpenStreetMap",
+        }).addTo(mapa);
+
+        const farmacias = [
+          // Tegucigalpa
+          { nombre: "Farmacia Simán Centro", coords: [14.079, -87.206], horario: "Lun-Sáb: 8am-8pm / Dom: 9am-5pm" },
+          { nombre: "Farmacia Kielsa Multiplaza", coords: [14.066, -87.180], horario: "Lun-Dom: 9am-9pm" },
+          { nombre: "Farmacia El Ahorro Kennedy", coords: [14.062, -87.172], horario: "Lun-Sáb: 7am-9pm / Dom: 8am-6pm" },
+          { nombre: "Farmacia Astor", coords: [14.0795, -87.195], horario: "Lun-Vie: 8am-6pm / Sáb: 8am-1pm" },
+          { nombre: "Farmacia Global", coords: [14.072, -87.182], horario: "Lun-Dom: 7am-10pm" },
+
+          // San Pedro Sula
+          { nombre: "Farmacia Kielsa SPS Centro", coords: [15.504, -88.025], horario: "Lun-Dom: 8am-9pm" },
+          { nombre: "Farmacia El Ahorro Los Andes", coords: [15.516, -88.033], horario: "Lun-Sáb: 8am-8pm / Dom: 9am-5pm" },
+          { nombre: "Farmacia Simán Mall Galerías del Valle", coords: [15.529, -88.025], horario: "Lun-Dom: 9am-8pm" },
+
+          // La Ceiba
+          { nombre: "Farmacia Kielsa Ceiba Centro", coords: [15.779, -86.792], horario: "Lun-Sáb: 8am-7pm / Dom: cerrado" },
+          { nombre: "Farmacia El Ahorro La Ceiba", coords: [15.770, -86.794], horario: "Lun-Dom: 7am-9pm" },
+
+          // Choluteca
+          { nombre: "Farmacia Kielsa Choluteca", coords: [13.312, -87.192], horario: "Lun-Sáb: 8am-6pm" },
+          { nombre: "Farmacia El Ahorro Choluteca", coords: [13.303, -87.189], horario: "Lun-Vie: 8am-7pm / Sáb: 9am-1pm" },
+
+          // Comayagua
+          { nombre: "Farmacia Kielsa Comayagua", coords: [14.451, -87.642], horario: "Lun-Dom: 8am-8pm" },
+          { nombre: "Farmacia El Ahorro Comayagua", coords: [14.453, -87.641], horario: "Lun-Sáb: 8am-7pm / Dom: cerrado" },
+
+          // Santa Rosa de Copán
+          { nombre: "Farmacia Kielsa Santa Rosa", coords: [14.773, -88.779], horario: "Lun-Sáb: 8am-6pm" },
+          { nombre: "Farmacia El Ahorro Santa Rosa", coords: [14.772, -88.777], horario: "Lun-Vie: 8am-6pm / Sáb: 8am-1pm" },
+
+          // Juticalpa
+          { nombre: "Farmacia Kielsa Juticalpa", coords: [14.666, -86.219], horario: "Lun-Dom: 8am-8pm" },
+          { nombre: "Farmacia El Ahorro Juticalpa", coords: [14.665, -86.220], horario: "Lun-Sáb: 8am-7pm / Dom: cerrado" },
+
+          // Danlí
+          { nombre: "Farmacia Kielsa Danlí", coords: [14.039, -86.583], horario: "Lun-Dom: 8am-8pm" },
+          { nombre: "Farmacia El Ahorro Danlí", coords: [14.040, -86.584], horario: "Lun-Sáb: 8am-7pm / Dom: cerrado" }
+        ];
+
+        farmacias.forEach(f => {
+          L.marker(f.coords).addTo(mapa)
+            .bindPopup(`<strong>${f.nombre}</strong><br>${f.horario}`);
+        });
+
+        mapaMostrado = true;
+      }
+    });
+  </script>
+</body>
+</html>

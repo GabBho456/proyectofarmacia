@@ -1,0 +1,207 @@
+ :root{--bg:#f5f7fb;--card:#fff;--accent:#dd717a;--muted:#6b7280}
+    *{box-sizing:border-box}
+    body{font-family:Inter,system-ui,Segoe UI,Roboto,Arial;line-height:1.4;background:var(--bg);padding:24px;color:#0f172a}
+    .container{max-width:880px;margin:0 auto}
+    .card{background:var(--card);border-radius:12px;padding:20px;box-shadow:0 6px 20px rgba(16,24,40,.06)}
+    h1{font-size:20px;margin:0 0 8px}
+    p.lead{color:var(--muted);margin:0 0 18px}
+    .row{display:flex;gap:16px;flex-wrap:wrap}
+    label{display:block;font-size:13px;color:var(--muted);margin-bottom:6px}
+    select,input,textarea{width:100%;padding:10px;border-radius:8px;border:1px solid #e6edf6;background:#fcfdff}
+    .half{flex:1 1 48%}
+    .full{flex:1 1 100%}
+    .payment-types{display:flex;gap:8px;margin-bottom:12px}
+    .type-btn{padding:8px 12px;border-radius:8px;border:1px solid #dfe7f5;background:#fff;cursor:pointer}
+    .type-btn.active{background:linear-gradient(90deg,var(--accent),#dd7171);color:#fff;border-color:transparent;box-shadow:0 6px 18px rgba(43,121,255,.18)}
+    .section{display:none;margin-top:12px;padding:12px;border-radius:8px;border:1px solid #eef5ff;background:#fbfdff}
+    .section.active{display:block}
+    .actions{display:flex;gap:12px;align-items:center;margin-top:16px}
+    button.primary{background:var(--accent);color:#fff;padding:10px 16px;border-radius:10px;border:none;cursor:pointer}
+    .summary{background:#fff;padding:12px;border-radius:8px;border:1px solid #eef2ff}
+    .muted{color:var(--muted);font-size:13px}
+    .success{color:green;font-weight:600}
+    .error{color:#b91c1c;font-weight:600}
+    @media (max-width:640px){.half{flex:1 1 100%}}
+    .back-btn {
+  display: inline-block;
+  margin-bottom: 16px;
+  background: transparent;
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 6px 10px;
+  border-radius: 8px;
+  transition: background 0.2s;
+}
+.back-btn:hover {
+  background: #e8f0ff;
+}
+.product-info {
+  background-color: #f8f9fa;
+  border: 1px solid #ddd;
+  padding: 12px;
+  border-radius: 6px;
+  margin: 15px 0;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  color: #333;
+}
+
+.product-info p {
+  margin: 6px 0;
+}
+
+.product-info .description {
+  font-weight: normal;
+}
+
+.product-info .presentation {
+  color: #555;
+}
+
+.product-info .rating {
+  color: #f39c12; /* color amarillo para las estrellas */
+}
+
+.product-info .availability {
+  color: #27ae60; /* verde para disponibilidad */
+  font-weight: bold;
+}
+.comentario {
+  display: flex;
+  align-items: flex-start;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid #ddd;
+}
+
+.foto-perfil {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+.detalle-comentario {
+  max-width: 400px;
+}
+
+.usuario {
+  font-weight: bold;
+  margin: 0;
+  color: #333;
+}
+
+.texto-comentario {
+  margin: 4px 0 0 0;
+  font-size: 14px;
+  color: #555;
+}
+.btn-comment {
+  background-color: #5b7cc4; /* azul suave */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+ 
+}
+
+.btn-comment:hover {
+  background-color: #5c8ce6; /* Azul más fuerte al pasar el mouse */
+  
+}
+
+.btn-comment:active {
+  background-color: #2c45d3;
+  box-shadow: none;
+  transform: scale(0.98);
+}
+
+/* Botón regresar */
+.btn-regresar {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.btn-regresar:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+/* Botón pagar ahora (rojo) */
+.btn-pagar {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #e53935;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    margin-left: 10px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.btn-pagar:hover {
+    background-color: #c62828;
+    transform: scale(1.05);
+}
+
+/* Botón agregar comentario (azul) */
+.btn-comentario {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #1e88e5;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    margin-left: 10px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.btn-comentario:hover {
+    background-color: #1565c0;
+    transform: scale(1.05);
+}
+
+.btn-regresar,
+.btn-pagar,
+.btn-comentario {
+    display: inline-block;
+    padding: 10px 20px;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    margin-right: 8px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Colores */
+.btn-regresar { background-color: #4CAF50; }
+.btn-pagar { background-color: #e53935; }
+.btn-comentario { background-color: #1e88e5; }
+
+/* Hover */
+.btn-regresar:hover { background-color: #45a049; }
+.btn-pagar:hover { background-color: #c62828; }
+.btn-comentario:hover { background-color: #1565c0; }
+
+/* Estado deshabilitado */
+.disabled {
+    pointer-events: none;
+    opacity: 0.5;
+}

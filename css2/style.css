@@ -1,0 +1,86 @@
+/* ============================
+   ESTILOS GENERALES DEL BODY
+   ============================ */
+body {
+  font-family: Arial, sans-serif; /* Tipo de letra principal */
+  background: #f2f2f2;            /* Color de fondo de la página */
+  margin: 0;                       /* Eliminar márgenes por defecto */
+  padding: 20px;                   /* Espaciado interno general */
+}
+
+/* ============================
+   CONTENEDOR PRINCIPAL
+   ============================ */
+.container {
+  max-width: 900px;                /* Ancho máximo del contenedor */
+  margin: auto;                     /* Centrar horizontalmente */
+  background: white;                /* Fondo blanco */
+  padding: 20px;                    /* Espaciado interno */
+  border-radius: 8px;               /* Bordes redondeados */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+}
+
+/* ============================
+   TITULOS
+   ============================ */
+h1 {
+  text-align: center;               /* Centrar texto */
+  margin-bottom: 20px;              /* Espacio debajo del título */
+}
+
+/* ============================
+   INPUT DE BÚSQUEDA
+   ============================ */
+#searchInput {
+  width: 100%;                      /* Ocupa todo el ancho del contenedor */
+  padding: 10px;                     /* Espaciado interno */
+  font-size: 1rem;                   /* Tamaño de la letra */
+  margin-bottom: 15px;               /* Espacio debajo del input */
+  border: 1px solid #ccc;            /* Borde gris claro */
+  border-radius: 4px;                /* Bordes ligeramente redondeados */
+}
+
+/* ============================
+   TABLAS
+   ============================ */
+table {
+  width: 100%;                      /* Ocupa todo el ancho */
+  border-collapse: collapse;        /* Elimina doble borde entre celdas */
+}
+
+/* ============================
+   CELDAS Y ENCABEZADOS
+   ============================ */
+th, td {
+  padding: 12px;                    /* Espaciado interno */
+  border: 1px solid #ddd;           /* Borde gris claro */
+  text-align: center;               /* Centrar texto */
+}
+
+/* ============================
+   ENCABEZADOS DE TABLA
+   ============================ */
+th {
+  background-color: #4CAF50;        /* Fondo verde */
+  color: white;                      /* Texto blanco */
+}
+
+/* ============================
+   FILAS ALTERNAS
+   ============================ */
+tr:nth-child(even) {
+  background-color: #f9f9f9;        /* Color gris claro para filas pares */
+}
+
+/* ============================
+   ESTADOS DE DISPONIBILIDAD
+   ============================ */
+.available {
+  color: green;                     /* Verde para disponible */
+  font-weight: bold;                /* Texto en negrita */
+}
+
+.unavailable {
+  color: red;                       /* Rojo para no disponible */
+  font-weight: bold;                /* Texto en negrita */
+}

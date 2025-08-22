@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+
+  <title>CLORFENAMINA FARMATECH</title>
+  <link rel="stylesheet" href="../css3/style.css">
+  <!-- Favicon -->
+<link rel="icon" type="image/png" href="../MG/cruzzz.webp">
+</head>
+<body>
+    <!-- Bloque publicitario flotante abajo a la derecha -->
+<div class="promo-box" id="promoBox">
+  <button class="promo-close" onclick="cerrarPromo()">×</button>
+  <a href="https://media.tenor.com/EZE4Mo-QlVAAAAAM/anonymous.gif" target="_blank">
+    <img src="https://media1.tenor.com/m/zNIXDjB4bXQAAAAd/roblox-teezzur.gif" 
+         alt="Promoción de producto">
+  </a>
+  </div>
+  <header>
+    <div class="logo">FarmaTech ⛑️</div>
+     <div class="buscador">
+  <input
+    type="text"
+    id="searchInput"
+    placeholder="¿Qué estás buscando?"
+    onkeydown="buscarEnter(event)"
+    oninput="filtrarResultados()"
+  />
+  <span id="cerrarBusqueda" onclick="cerrarResultados()">×</span>
+  <div id="resultadoLista" class="resultados"></div>
+</div>
+
+
+     <div class="container">
+      
+
+        <button class="btn" onclick="irAPagina('../farmacia.html')">
+            Ubicacion 📌
+        </button>
+
+        <button class="btn" onclick="irAPagina('../index.html')">
+            Inicio 🕊️
+        </button>
+    </div>
+  </header>
+  <nav class="breadcrumb">
+   <p><a href="../index.html">Inicio</a> &gt; Cuadro de Busqueda de FarmaTech &gt; Clorfenamina 💊</p>
+  </nav>
+
+  <main class="producto-contenedor">
+    <div class="gallery">
+  <div class="thumbnails">
+    
+    <img src="https://www.lasanteca.com/userfiles/2018/12/LORATADINA-10MG-CAJA-POR-10-TABLETAS-CON-BLISTER.jpg" alt="Imagen 1" class="thumb active">
+    <img src="https://calox.com/wp-content/uploads/2022/12/LORATADINA.jpg" alt="Imagen 2" class="thumb">
+    <img src="https://www.lasanteca.com/userfiles/2018/12/LORATADINA-5MG-5ML-JARABE-100ML-FRASCO.jpg" alt="Imagen 3" class="thumb">
+    
+  </div>
+  <div class="main-image-container">
+    <img src="img1-large.jpg" alt="Imagen grande" id="mainImage" class="main-image">
+  </div>
+</div>
+    <div class="producto-info">
+      <h1><b>Clorfenamina </b>(3R)-3-(4-clorofenil)-N,N-dimetil-3-(piridin-2-il)propan-1-amina.</h1>
+      
+      <p class="precio-antiguo">HNL$   50.00</p>
+      <p class="ahorro">Ahorrá HNL$  20.00 </p>
+      <p class="ahorro"><b>Precio HNL$</b> 30.00</p>
+     <div class="total">
+    Total: L <span id="total"> 30.00</span>
+  </div>
+     <div class="cantidad-container">
+    <button id="restar">-</button>
+    <input type="number" id="cantidad" value="1" min="1" readonly />
+    <button id="sumar">+</button>
+    </div>
+  </div>
+      </div>
+     
+    
+      <button class="btn-comprar" onclick="irAPagina('../compra/clorfenamina1.html')">
+        🛒 Comprar ahora
+      </button>
+  </main>
+<div class="tabs">
+  <button class="tab active" onclick="openTab(event, 'descripcion')">Descripción del producto</button>
+  <button class="tab" onclick="openTab(event, 'caracteristicas')">Características técnicas</button>
+  <button class="tab" onclick="openTab(event, 'cambios')">Cambios y devoluciones</button>
+</div>
+
+<div class="tab-content">
+
+  <!-- Pestaña Descripción -->
+  <div id="descripcion" class="tab-panel active">
+    <div class="medicamento-info Clorfenamina">
+      <h2>Clorfenamina 💊</h2>
+      <p><strong>Nombre genérico:</strong> Clorfenamina. </p>
+      <p><strong>Nombre comercial:</strong> Coricidin, Cofalito, Tylenol. </p>
+      <p><strong>Forma farmacéutica:</strong> Tabletas recubiertas o comprimidos, Jarabe o solución oral, Gotas orales, Solución inyectable.  </p>
+      <p><strong>Presentaciones comunes:</strong> 4 mg, 2 mg.</p>
+
+      <h3>Descripción:</h3>
+      <p>
+        La clorfenamina, también conocida como clorfeniramina, es un antihistamínico de 
+        primera generación que se utiliza para aliviar los síntomas de las alergias y el resfriado común.
+        Actúa bloqueando la acción de la histamina, una sustancia que el cuerpo libera durante
+        las reacciones alérgicas y que es responsable de síntomas como estornudos, picazón y secreción nasal. 
+      </p>
+
+      <h3>Indicaciones:</h3>
+      <ul>
+        <li>Rinitis alérgica.</li>
+        <li>Urticaria.</li>
+        <li>Infecciones de transmisión sexual (ITS).</li>
+        <li>Conjuntivitis alérgica.</li>
+        <li>Resfriado común.</li>
+
+      </ul>
+
+      <h3>Modo de administración:</h3>
+      <p>La azitromicina se administra por vía oral o intravenosa, dependiendo de la gravedad de la infección y la forma farmacéutica. . </p>
+
+      <h3>Precauciones y advertencias:</h3>
+      <ul>
+        <li>No se debe combinar con alcohol o cualquier otro depresor del sistema nervioso central 
+           (como pastillas para dormir o tranquilizantes), ya que la clorfenamina potencia sus efectos
+           sedantes..</li>
+        <li>Consulte a su médico antes de usarla si tiene glaucoma de ángulo estrecho, hipertrofia prostática,
+           o problemas de vejiga, ya que la clorfenamina podría empeorar estas condiciones.</li>
+        <li>No se recomienda su uso durante el tercer trimestre de embarazo y la lactancia. Consulte a su médico para alternativas seguras.</li>
+        <li>Los niños y los ancianos son más propensos a experimentar efectos secundarios. Su uso en niños menores de 2 años debe ser bajo estricta supervisión médica.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Pestaña Características -->
+  <div id="caracteristicas" class="tab-panel">
+    <div class="medicamento-info loratadina-tecnica">
+      <h2>Clorfenamina 💊 - Características Técnicas</h2>
+      <ul>
+        <li><strong>Nombre químico:</strong>(3R)-3-(4-clorofenil)-N,N-dimetil-3-(piridin-2-il)propan-1-amina.</li>
+        <li><strong>Fórmula molecular:</strong> C<sub>16</sub>H<sub>19</sub>CIN<sub>2</sub></li>
+        <li><strong>Peso molecular:</strong>274.79 g/mol</li>
+        <li><strong>Clase terapéutica:</strong> Antihistamínico de primera generación..</li>
+        <li><strong>Presentaciones:</strong> Comprimidos/Tabletas, Jarabe , gotas orales, inyección o infusión. </li>
+        <li><strong>Concentraciones habituales:</strong> 4 mg, 2 mg.</li>
+        <li><strong>Indicaciones:</strong> Rinitis alérgica, Urticaria (ronchas), Conjuntivitis alérgica, Resfriado común. </li>
+        <li><strong>Contraindicaciones:</strong>Hipersensibilidad, Glaucoma, Hipertrofia prostática, Embarazo y lactancia, Alcohol y sedantes. </li>
+        <li><strong>Efectos secundarios comunes:</strong> Boca seca, Visión borrosa, Estreñimiento, Mareos y aturdimiento, Dificultad para orinar.</li>
+        <li><strong>Modo de administración:</strong> La clorfenamina se administra por vía oral. La dosis varía según la edad y el peso.</li>
+        <li><strong>Almacenamiento:</strong> Conservar a temperatura ambiente (15-30°C), protegido de luz y humedad; la suspensión debe refrigerarse y desecharse después de la fecha indicada</li>
+        <li><strong>Vida útil:</strong> 2 a 5 años según presentación y almacenamiento</li>
+        <li><strong>Fabricantes frecuentes:</strong> Laboratorios López, MK , Calox. </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Pestaña Cambios -->
+  <div id="cambios" class="tab-panel">
+    <h2>Cambios y devoluciones</h2>
+    <p>Tienes 30 días para devolver o cambiar el producto presentando la factura de compra.</p>
+  </div>
+
+</div>
+
+
+
+  
+<script>
+const medicamentos = [
+  {
+    nombre: "PARACETAMOL",
+    descripcion: "Alivia el dolor y la fiebre.",
+    imagen: "https://tse1.mm.bing.net/th/id/OIP.JOyNz7Icr0a2PkYOUpGeKQHaE8?rs=1&pid=ImgDetMain&o=7&rm=3",
+    link: "paracetamol.html"
+  },
+  {
+    nombre: "IBUPROFENO",
+    descripcion: "Antiinflamatorio y analgésico.",
+    imagen: "https://www.notilogia.com/wp-content/uploads/2023/07/ibuprofeno-para-que-sirve.jpg",
+    link: "ibuprofeno.html"
+  },
+    
+  {
+    nombre: "AMOXICILINA",
+    descripcion: "Combate infecciones bacterianas. Comunmente usado para infecciones respiratorias e infecciones. ",
+    imagen: "https://www.lasanteca.com/userfiles/2018/12/AMOXICILINA-250MG-5ML-SUSPENCI%E2%80%A1N-100ML-INCLINADO.jpg",
+    link: "amoxicilina.html"
+  },
+  {
+    nombre: "METFORMINA",
+    descripcion: "La metformina es un medicamento utilizado principalmente para tratar la diabetes tipo 2. También se utiliza en el tratamiento del síndrome de ovario poliquístico. ",
+    imagen: "https://tse4.mm.bing.net/th/id/OIP.6MgDEhydPUSXciIGJCUZKQHaGe?r=0&rs=1&pid=ImgDetMain&o=7&rm=3",
+    link: "metmorfin.html"
+  },
+ 
+  {
+    nombre: "DICLOFENACO",
+    descripcion: "El diclofenaco es un medicamento antiinflamatorio no esteroide (AINE) que se utiliza para tratar diversas condiciones como: Artritis reumatoide y osteoartrosis, Dismenorrea (cólico menstrual), Migrañas y dolores de cabeza.",
+    imagen: "https://quefarmacia.com/wp-content/uploads/2017/03/Diclofenaco.jpg",
+    link: "diclofenaco.html"
+  },
+  {
+    nombre: "LORATADINA",
+    descripcion: "La loratadina es un antihistamínico que se utiliza para aliviar los síntomas de alergias, tales como: Rinitis alérgica, Síntomas de resfriados.",
+    imagen: "https://quefarmacia.com/wp-content/uploads/2017/04/209-1024x993.jpg",
+    link: "loratadina.html"
+  },
+  {
+    nombre: "CETRIZINA",
+    descripcion: "La cetirizina es un antihistamínico que se utiliza para Aliviar los síntomas de alergias, Tratar alergias estacionales, Controlar alergias en la piel, Reducir la producción de histamina. ",
+    imagen: "https://tse2.mm.bing.net/th/id/OIP.fMH3UbIazXZwQAyvoOt_ogHaE3?r=0&rs=1&pid=ImgDetMain&o=7&rm=3",
+    link: "cetirizina.html"
+  },
+  {
+    nombre: "AZITROMICINA",
+    descripcion: "La azitromicina es un antibiótico macrólido que se utiliza para tratar diversas infecciones bacterianas, incluyendo: Infecciones respiratorias, Enfermedades de transmisión sexual, Infecciones de la piel y Otras infecciones.",
+    imagen: "https://th.bing.com/th/id/R.15baf090760d2f864810cd97a1897f95?rik=PbPJXAEln9Gsbg&riu=http%3a%2f%2fquefarmacia.com%2fwp-content%2fuploads%2f2017%2f05%2f7502223708921.jpg&ehk=%2bi7zsZapLI%2bzjENlF0XuR%2bCfNVq7or8ftBjCFIHsQRA%3d&risl=&pid=ImgRaw&r=0",
+    link: "azitromicina.html"
+  },
+  {
+    nombre: "CLORFENAMINA",
+    descripcion: "La clorfenamina se utiliza para aliviar los síntomas de diversas afecciones alérgicas y del resfriado común, como: Alergias, estornudos, secreción nasal, ojos llorosos, picazón en la nariz o garganta. ",
+    imagen: "https://www.laboratoriochile.cl/wp-content/webp-express/webp-images/doc-root/wp-content/uploads/2015/09/Clorfenamina_4MG_20C_BE_HD.jpg.webp",
+    link: "clorfenamina.html"
+  },
+  {
+    nombre: "ACETAZOLAMIDA",
+    descripcion: "La acetazolamida se utiliza para tratar una variedad de afecciones, entre las que se incluyen: Glaucoma, Epilepsia, Mal de altura (enfermedad aguda de la montaña), Edema (retención de líquidos).",
+    imagen: "https://www.laboratoriochile.cl/wp-content/webp-express/webp-images/doc-root/wp-content/uploads/2015/08/perfil-web.png.webp",
+    link: "acetazolamida.html"
+  },
+  {
+    nombre: "ACIDO FOLICO",
+    descripcion: "El ácido fólico, también conocido como vitamina B9, es una vitamina esencial para el correcto funcionamiento del organismo. Sus funciones y beneficios son vitales en varias etapas de la vida, pero es especialmente importante para las mujeres en edad fértil y durante el embarazo.",
+    imagen: "https://www.fahorro.com/media/catalog/product/7/5/7506472803161_1.png?optimize=medium&bg-color=255,255,255&fit=bounds&height=502&width=502&canvas=502:502&format=jpeg&dpr=1%201x",
+    link: "acidofolico.html"
+  },
+  {
+    nombre: "AGUA DESTILADA",
+    descripcion: "El agua destilada es agua que ha pasado por un proceso de destilación, lo que implica hervirla y luego condensar el vapor para recolectarlo en otro recipiente. Este proceso elimina casi por completo minerales, sales, impurezas y microorganismos que se encuentran en el agua del grifo.",
+    imagen: "https://www.labfinlay.com/wp-content/uploads/2016/08/Agua-Destilada-250ml-1-768x1152.jpg",
+    link: "aguadesti.html"
+  },
+  {
+    nombre: "ALOPURINOL",
+    descripcion: "El alopurinol es un medicamento que se utiliza principalmente para reducir la producción de ácido úrico en el organismo. Los niveles elevados de ácido úrico en la sangre pueden causar diversas afecciones, y el alopurinol está indicado para su prevención y tratamiento.",
+    imagen: "https://benessilabs.com/wp-content/uploads/2021/11/Alopurinol-768x768.jpg",
+    link: "alopurinol.html"
+  },
+  {
+    nombre: "ADENOSINA",
+    descripcion: " La adenosina se administra por vía intravenosa para revertir rápidamente ciertos tipos de arritmias cardíacas, como la taquicardia supraventricular paroxística (TSVP). ",
+    imagen: "https://prixz.com/salud/wp-content/uploads/2020/10/adenosina.jpg",
+    link: "adenosina.html"
+  },
+  {
+    nombre: "AMITRIPTILINA",
+    descripcion: "La amitriptilina es un medicamento que pertenece a la clase de los antidepresivos tricíclicos. A pesar de que su uso principal fue para tratar la depresión, hoy en día se utiliza para una variedad de condiciones médicas, a menudo en dosis más bajas que las usadas para la depresión.",
+    imagen: "https://medicamentosmk.com/static/images/amitriptilina-mk.webp",
+    link: "amitriptilina.html"
+  },
+  {
+    nombre: "AMIODARONA",
+    descripcion: "La amiodarona es un medicamento antiarrítmico que se utiliza para tratar y prevenir ciertos tipos graves de arritmias (ritmos cardíacos anormales). Pertenece a la clase III de antiarrítmicos y es un fármaco complejo y potente que se usa cuando otros medicamentos no han sido efectivos o no se toleran.",
+    imagen: "https://medicamentosmk.com/static/images/amiodarona-mk.webp",
+    link: "amiodarona.html"
+  },
+  {
+    nombre: "AMLODIPINO",
+    descripcion: "El amlodipino es un medicamento que pertenece a la clase de los bloqueadores de los canales de calcio. Su función principal es relajar los vasos sanguíneos para que el corazón no tenga que esforzarse tanto para bombear la sangre.",
+    imagen: "https://resources.claroshop.com/imagenes-sanborns-ii/1200/7502216793675.jpg?scale=500&qlty=75",
+    link: "amlodipino.html"
+  },
+  {
+    nombre: "BACLOFENO",
+    descripcion: "El baclofeno es un medicamento que pertenece a la clase de los relajantes del músculo esquelético. Su principal uso es para tratar el dolor y la espasticidad, que es la rigidez y el endurecimiento de los músculos.",
+    imagen: "https://www.reutter.cl/imagenes/productos/baclofeno-10-mg.jpg",
+    link: "baclofeno.html"
+  },
+  {
+    nombre: "BIPERIDENO",
+    descripcion: "El biperideno es un medicamento anticolinérgico que se usa principalmente para tratar los síntomas del Parkinson y los efectos secundarios de otros medicamentos.",
+    imagen: "https://medicamentosmk.com/static/images/biperideno-hcl-mk.webp",
+    link: "biperideno.html"
+  },
+  {
+    nombre: "CETRIZINA",
+    descripcion: "La cetirizina es un medicamento antihistamínico que se utiliza para aliviar los síntomas de las alergias. Funciona bloqueando la acción de la histamina, una sustancia en el cuerpo que causa los síntomas alérgicos.",
+    imagen: "https://www.lasanteca.com/userfiles/2018/12/CETIRIZINA-10MG-CAJA-POR-10-TABLETAS-CON-BLISTER.jpg",
+    link: "cetirizina.html"
+  },
+  
+ 
+  {
+    nombre: "CARBIDOPA",
+    descripcion: "La carbidopa es un medicamento que se utiliza principalmente en combinación con la levodopa para tratar los síntomas de la enfermedad de Parkinson y otras afecciones similares.",
+    imagen: "https://d2d21jw8en5l3a.cloudfront.net/vendty2_db_36949_drog2020/imagenes_productos/2113_carbidopa_levodopa_x_30_tabletas_genfar_imagen.png",
+    link: "carbidopa.html"
+  },
+  
+];
+
+function buscarEnter(e) {
+    if (e.key === "Enter") {
+      const query = document.getElementById("searchInput").value.toLowerCase().trim();
+      const med = medicamentos.find(m => m.nombre.toLowerCase() === query);
+
+      if (med) {
+        window.location.href = med.link;
+      } else {
+        alert("No se encontró el medicamento");
+      }
+    }
+  }
+
+  function filtrarResultados() {
+    const input = document.getElementById("searchInput");
+    const lista = document.getElementById("resultadoLista");
+    const texto = input.value.toLowerCase();
+
+    lista.innerHTML = "";
+
+    if (texto.trim() === "") {
+      lista.style.display = "none";
+      return;
+    }
+
+    const resultados = medicamentos.filter(m =>
+      m.nombre.toLowerCase().includes(texto)
+    );
+
+    if (resultados.length > 0) {
+      resultados.forEach(med => {
+        const item = document.createElement("div");
+        item.classList.add("resultado-item");
+        item.innerHTML = `
+          <img src="${med.imagen}" alt="${med.nombre}" />
+          <div>
+            <strong>${med.nombre}</strong><br />
+            <span>${med.descripcion}</span>
+          </div>
+        `;
+
+        // Redirigir al hacer click en el resultado
+        item.addEventListener("click", () => {
+          window.location.href = med.link;
+        });
+
+        lista.appendChild(item);
+      });
+      lista.style.display = "block";
+    } else {
+      lista.innerHTML = "<div class='resultado-item'>No hay resultados</div>";
+      lista.style.display = "block";
+    }
+  }
+
+  function cerrarResultados() {
+    document.getElementById("searchInput").value = "";
+    document.getElementById("resultadoLista").style.display = "none";
+  }
+
+
+     const precioUnitario = 30;
+    const inputCantidad = document.getElementById("cantidad");
+    const totalSpan = document.getElementById("total");
+    const btnSumar = document.getElementById("sumar");
+    const btnRestar = document.getElementById("restar");
+
+    function actualizarTotal() {
+      const cantidad = parseInt(inputCantidad.value) || 1;
+      const total = cantidad * precioUnitario;
+      totalSpan.textContent = total;
+    }
+
+    btnSumar.addEventListener("click", () => {
+      inputCantidad.value = parseInt(inputCantidad.value) + 1;
+      actualizarTotal();
+    });
+
+    btnRestar.addEventListener("click", () => {
+      let valor = parseInt(inputCantidad.value);
+      if (valor > 1) {
+        inputCantidad.value = valor - 1;
+        actualizarTotal();
+      }
+    });
+
+    // Por si el usuario cambia el número manualmente (desactiva readonly si quieres esto)
+    inputCantidad.addEventListener("input", actualizarTotal);
+
+const thumbnails = document.querySelectorAll('.thumb');
+const mainImage = document.getElementById('mainImage');
+const mainImageContainer = document.querySelector('.main-image-container');
+
+thumbnails.forEach((thumb, index) => {
+  thumb.addEventListener('click', () => {
+    // Cambiar la imagen grande
+    const largeSrc = thumb.src.replace('-small', '-large');
+    mainImage.src = largeSrc;
+
+    // Cambiar la clase activa
+    thumbnails.forEach(t => t.classList.remove('active'));
+    thumb.classList.add('active');
+  });
+});
+
+// Zoom al pasar el mouse
+mainImageContainer.addEventListener('mousemove', (e) => {
+  const rect = mainImageContainer.getBoundingClientRect();
+  const x = e.clientX - rect.left; // posición X dentro del contenedor
+  const y = e.clientY - rect.top;  // posición Y dentro del contenedor
+
+  const xPercent = x / rect.width * 100;
+  const yPercent = y / rect.height * 100;
+
+  mainImage.style.transformOrigin = `${xPercent}% ${yPercent}%`;
+  mainImage.style.transform = 'scale(2)';  // Zoom x2
+});
+
+mainImageContainer.addEventListener('mouseleave', () => {
+  mainImage.style.transform = 'scale(1)';
+  mainImage.style.transformOrigin = 'center center';
+});
+
+window.addEventListener('DOMContentLoaded', () => {
+  const activeThumb = document.querySelector('.thumb.active');
+  if (activeThumb) {
+    const largeSrc = activeThumb.src.replace('-small', '-large');
+    mainImage.src = largeSrc;
+  }
+});
+
+
+function irAPagina(ruta) {
+    window.location.href = ruta;
+}
+
+function openTab(evt, tabId) {
+  // Ocultar todos los paneles
+  document.querySelectorAll(".tab-panel").forEach(panel => {
+    panel.classList.remove("active");
+  });
+
+  // Quitar clase 'active' de todos los botones
+  document.querySelectorAll(".tab").forEach(tab => {
+    tab.classList.remove("active");
+  });
+
+  // Mostrar el panel correspondiente
+  document.getElementById(tabId).classList.add("active");
+
+  // Marcar el botón como activo
+  evt.currentTarget.classList.add("active");
+}
+
+
+
+function cerrarPromo() {
+  document.getElementById("promoBox").style.display = "none";
+}
+
+
+  </script>
+ 
+ 
+
+</body>
+</html>

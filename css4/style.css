@@ -1,0 +1,39 @@
+ :root{--bg:#f5f7fb;--card:#fff;--accent:#dd717a;--muted:#6b7280}
+    *{box-sizing:border-box}
+    body{font-family:Inter,system-ui,Segoe UI,Roboto,Arial;line-height:1.4;background:var(--bg);padding:24px;color:#0f172a}
+    .container{max-width:880px;margin:0 auto}
+    .card{background:var(--card);border-radius:12px;padding:20px;box-shadow:0 6px 20px rgba(16,24,40,.06)}
+    h1{font-size:20px;margin:0 0 8px}
+    p.lead{color:var(--muted);margin:0 0 18px}
+    .row{display:flex;gap:16px;flex-wrap:wrap}
+    label{display:block;font-size:13px;color:var(--muted);margin-bottom:6px}
+    select,input,textarea{width:100%;padding:10px;border-radius:8px;border:1px solid #e6edf6;background:#fcfdff}
+    .half{flex:1 1 48%}
+    .full{flex:1 1 100%}
+    .payment-types{display:flex;gap:8px;margin-bottom:12px}
+    .type-btn{padding:8px 12px;border-radius:8px;border:1px solid #dfe7f5;background:#fff;cursor:pointer}
+    .type-btn.active{background:linear-gradient(90deg,var(--accent),#dd7171);color:#fff;border-color:transparent;box-shadow:0 6px 18px rgba(43,121,255,.18)}
+    .section{display:none;margin-top:12px;padding:12px;border-radius:8px;border:1px solid #eef5ff;background:#fbfdff}
+    .section.active{display:block}
+    .actions{display:flex;gap:12px;align-items:center;margin-top:16px}
+    button.primary{background:var(--accent);color:#fff;padding:10px 16px;border-radius:10px;border:none;cursor:pointer}
+    .summary{background:#fff;padding:12px;border-radius:8px;border:1px solid #eef2ff}
+    .muted{color:var(--muted);font-size:13px}
+    .success{color:green;font-weight:600}
+    .error{color:#b91c1c;font-weight:600}
+    @media (max-width:640px){.half{flex:1 1 100%}}
+    .back-btn {
+  display: inline-block;
+  margin-bottom: 16px;
+  background: transparent;
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 6px 10px;
+  border-radius: 8px;
+  transition: background 0.2s;
+}
+.back-btn:hover {
+  background: #e8f0ff;
+}

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Comentarios - Medicamentos</title>
+  <link rel="stylesheet" href="sesion/style.css">
+  <link rel="icon" type="image/png" href="MG/cruzzz.webp">
+
+  <style>
+    .alert {
+      position: fixed;
+      top: -100px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #4caf50;
+      color: white;
+      padding: 15px 30px;
+      border-radius: 8px;
+      box-shadow: 0px 4px 12px rgba(0,0,0,0.2);
+      font-size: 16px;
+      opacity: 0;
+      transition: all 0.5s ease-in-out;
+      z-index: 9999;
+    }
+    .alert.error { background: #f44336; }
+    .alert.show { top: 20px; opacity: 1; }
+  </style>
+</head>
+<body>
+
+  <!-- Notificación -->
+  <div id="alertBox" class="alert"></div>
+
+  <div class="form-container">
+    <h2>Deja tu comentario</h2>
+    <!-- Formulario actualizado al nuevo PHP -->
+    <form action="guardar_comentario.php" method="post">
+      <label for="nombre">Nombre completo:</label>
+      <input type="text" id="nombre" name="nombre" required>
+
+      <label for="correo">Correo electrónico:</label>
+      <input type="email" id="correo" name="correo" required>
+
+      <label for="mensaje">Comentario:</label>
+      <textarea id="mensaje" name="mensaje" placeholder="Escribe tu comentario aquí..." required></textarea>
+
+      <div class="btn-group">
+        <button type="submit" class="btn submit-btn">Enviar</button>
+        <a href="index.html" class="btn exit-btn">Salir</a>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const status = urlParams.get('status');
+    const alertBox = document.getElementById('alertBox');
+
+    if (status === 'ok') {
+      alertBox.textContent = "✅ Tu comentario fue enviado correctamente.";
+      alertBox.classList.add("show");
+    } else if (status === 'error') {
+      alertBox.textContent = "❌ Hubo un error al enviar tu comentario.";
+      alertBox.classList.add("error", "show");
+    }
+
+    if (status) {
+      setTimeout(() => {
+        alertBox.classList.remove("show");
+      }, 4000);
+    }
+  </script>
+
+</body>
+</html>
